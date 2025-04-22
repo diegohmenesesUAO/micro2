@@ -16,7 +16,7 @@ COPY . /app
 
 # Instalo dependencias (puedes usar requirements.txt si tienes)
 RUN pip install --upgrade pip
-RUN pip install --no-binary :all: uvicorn fastapi
+RUN pip install -r requirements.txt
 
 # Comando de ejecución
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]
