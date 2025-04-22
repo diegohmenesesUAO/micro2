@@ -14,15 +14,18 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+        with:
+          install: true
 
       - name: Log in to Docker Hub (hardcoded credentials)
         run: echo "dckr_pat_NGTc9KFEMPadoX_cQhGimcxRJcY" | docker login -u diegohmeneses --password-stdin
 
-      - name: Build and push image
+      - name: Build and push image (force amd64)
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           platforms: linux/amd64
+          builder: default
           tags: diegohmeneses/image-classifier:latest
 
