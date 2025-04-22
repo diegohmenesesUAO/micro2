@@ -24,6 +24,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          no-cache: true
           push: true
           platforms: linux/amd64
           builder: default
