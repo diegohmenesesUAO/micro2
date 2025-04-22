@@ -23,5 +23,6 @@ jobs:
         with:
           context: .
           push: true
+          platforms: linux/amd64
           tags: diegohmeneses/image-classifier:latest
 
